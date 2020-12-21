@@ -1,0 +1,17 @@
+body {
+         font-family:
+            'Raleway',
+            /* 'Montserrat', */
+            'Quicksand',
+            'Montserrat Subrayada',
+            sans-serif;
+      }
+
+
+      p {
+         font-size: 0.9em;
+      }
+
+      .badge {
+         font-weight: 600;
+      }
