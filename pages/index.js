@@ -1,14 +1,15 @@
-import moduleName from "redux";
 import Layout from "../components/Layout";
 
 const Index = (props) => {
+   
   return (
     <Layout>
       <div>
         <div className="accordion accordion-flush" id="accordionFlushExample">
           <div className="accordion-item">
             <h2 className="accordion-header" id="flush-headingOne">
-              <button
+                    <button
+                       
                 className="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
@@ -16,7 +17,7 @@ const Index = (props) => {
                 aria-expanded="false"
                 aria-controls="flush-collapseOne"
               >
-                Welcome to Ignites 
+                Welcome to Ignites
               </button>
             </h2>
             <div
@@ -50,4 +51,5 @@ Index.getInitialProps = async () => {
     console.log({ err });
   }
 };
+
 export default Index;

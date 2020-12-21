@@ -5,7 +5,8 @@ const Navbar = () => {
       <div className="container-fluid">
         <Link href="/">
           <a className="navbar-brand">
-            <i className="fab fa-react"></i> Ignites
+            <i className="fab fa-react"></i>
+            Ignites
           </a>
         </Link>
         <button
@@ -29,6 +30,11 @@ const Navbar = () => {
             <Link href="/about">
               <a className="nav-link" href="/about">
                 About
+              </a>
+            </Link>
+            <Link href="/weather">
+              <a className="nav-link" href="/weather">
+                <i className="fas fa-cloud-sun"></i> Weather
               </a>
             </Link>
           </div>
