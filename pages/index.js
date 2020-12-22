@@ -1,36 +1,20 @@
 import Layout from "../components/Layout";
-
+import { incrementCounter } from "../redux/actions/counter";
+import { connect } from "react-redux";
+import Link from "next/link"
+import Card from '../components/card'
+import Modal from '../components/modal'
 const Index = (props) => {
-   
+  const { counter, increment } = props;
   return (
     <Layout>
+      
       <div>
-        <div className="accordion accordion-flush" id="accordionFlushExample">
-          <div className="accordion-item">
-            <h2 className="accordion-header" id="flush-headingOne">
-                    <button
-                       
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseOne"
-                aria-expanded="false"
-                aria-controls="flush-collapseOne"
-              >
-                Welcome to Ignites
-              </button>
-            </h2>
-            <div
-              id="flush-collapseOne"
-              className="accordion-collapse collapse"
-              aria-labelledby="flush-headingOne"
-              data-bs-parent="#accordionFlushExample"
-            >
-              <div className="accordion-body">
-                {props.bpi?.map((item) => item.id + " ")}
-              </div>
-            </div>
-          </div>
+        
+        <div className="d-flex align-content-end flex-wrap">
+          {props.data?.map((post) => {
+            return <Card key={post.id.toString()} post={post} />;
+          })}
         </div>
       </div>
     </Layout>
@@ -40,16 +24,50 @@ const Index = (props) => {
 Index.getInitialProps = async () => {
   try {
     console.log("api");
-    const responce = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const data = await responce.json();
+    const posts = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const data = await posts.json();
 
-    console.log(data[0]);
+    const photos = await fetch("http://jsonplaceholder.typicode.com/photos");
+
+    const dataPhots = await photos.json();
+    const users = ['Mike Holms','Stiven Sigal','Martha Hines','James Bond','Sherif Butt']
+    let mergedData = [];
+    let _data = {};
+    for (let i = 0; i < data.length; i++){
+
+      
+     
+      _data = {
+        userId: data[i].userId,
+        userName: users[data[i].userId],
+        id: data[i].id,
+        title: data[i].title,
+        body: data[i].body,
+        albumId: dataPhots[i].albumId,
+        imgeTitle: dataPhots[i].title,
+        url: dataPhots[i].url,
+        thumbnailUrl: dataPhots[i].thumbnailUrl,
+      };
+        
+      mergedData = [...mergedData,_data];
+    }
+    
+    
     return {
-      bpi: data,
+      data:mergedData,
+      count: data.length
     };
   } catch (err) {
     console.log({ err });
   }
 };
 
-export default Index;
+const mapStateToProps = (state) => ({
+  counter: state.counterReducer,
+});
+
+const mapDispatchToProps = {
+  increment: incrementCounter,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Index);
