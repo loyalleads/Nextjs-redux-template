@@ -1,6 +1,7 @@
 import Head from "next/head";
-import Navbar from "../components/Navbar";
-
+import Navbar from "./Navbar";
+import NavbarTop from './NavbarTop'
+import NavbarSide from './NavbarSide'
 
 const Layout = (props) => {
   return (
@@ -15,7 +16,7 @@ const Layout = (props) => {
         ></link>
         {/* Google Fonts  */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&family=Montserrat:wght@300;600&family=Raleway:wght@300;600;900&family=Quicksand:wght@300;600;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&family=Montserrat:wght@300;600&family=Raleway:wght@300;600&family=Quicksand:wght@300;600;900&display=swap"
           rel="stylesheet"
         ></link>
 
@@ -34,9 +35,16 @@ const Layout = (props) => {
         ></meta>
         <title>Bitz Price</title>
       </Head>
-      <Navbar />
 
-      <div className="container mt-4">{props.children}</div>
+      <NavbarTop />
+      <div className="container-fluid">
+        <div className="row">
+          
+          
+            {props.children}
+          
+        </div>
+      </div>
 
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"

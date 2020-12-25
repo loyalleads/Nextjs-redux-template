@@ -1,26 +1,25 @@
-body {
-         font-family:
-            'Raleway',
-            /* 'Montserrat', */
-            'Quicksand',
-            'Montserrat Subrayada',
-            sans-serif;
-      }
+.appBody{
+  font-family: 
+  "Raleway",
+   /* 'Montserrat', */ 
+   "Quicksand",
+    "Montserrat Subrayada", 
+    sans-serif;
+}
 
+p {
+  font-size: 0.9em;
+}
 
-      p {
-         font-size: 0.9em;
-      }
+.badge {
+  font-weight: 600;
+}
+.fa-react {
+  font-size: 1em;
+  text-shadow: 0 1px 0 #fff;
+  margin-right: 7px;
+}
 
-      .badge {
-         font-weight: 600;
-      }
-      .fa-react{
-         color:#9900ff;
-         text-shadow: 0 1px 0 #fff;
-         margin-right: 5px;
-      }
-
-      .mxw{
-         width: 18rem;
-      }
+.mxw {
+  width: 18rem;
+}

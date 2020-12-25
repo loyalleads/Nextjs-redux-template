@@ -4,13 +4,13 @@ import { connect } from "react-redux";
 import Link from "next/link"
 import Card from '../components/card'
 import Modal from '../components/modal'
+import PageTitle from "../components/PageTitle";
 const Index = (props) => {
   const { counter, increment } = props;
   return (
     <Layout>
-      
+      <PageTitle title="Home" />
       <div>
-        
         <div className="d-flex align-content-end flex-wrap">
           {props.data?.map((post) => {
             return <Card key={post.id.toString()} post={post} />;
@@ -32,21 +32,18 @@ Index.getInitialProps = async () => {
     const dataPhots = await photos.json();
     const users = ['Mike Holms','Stiven Sigal','Martha Hines','James Bond','Sherif Butt']
     let mergedData = [];
-    let _data = {};
+    
     for (let i = 0; i < data.length; i++){
-
-      
-     
-      _data = {
+      let _data = {
         userId: data[i].userId,
         userName: users[data[i].userId],
         id: data[i].id,
         title: data[i].title,
         body: data[i].body,
         albumId: dataPhots[i].albumId,
-        imgeTitle: dataPhots[i].title,
         url: dataPhots[i].url,
         thumbnailUrl: dataPhots[i].thumbnailUrl,
+        imgeTitle: dataPhots[i].title,
       };
         
       mergedData = [...mergedData,_data];

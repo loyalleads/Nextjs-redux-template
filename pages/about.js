@@ -1,11 +1,11 @@
-import Layout from "../components/Layout";
+import LayoutDash from "../components/LayoutDash";
 const About = () => {
   return (
-    <Layout>
+    <LayoutDash>
       <div>
         <div className="">About!</div>
       </div>
-    </Layout>
+    </LayoutDash>
   );
 };
 
