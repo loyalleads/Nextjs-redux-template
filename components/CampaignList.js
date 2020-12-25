@@ -2,8 +2,8 @@ const CampaignList = (props) => {
   return (
     <div className="d-flix">
       <h2 className="border-bottom pb-3">Campaign List</h2>
-      <div class="table-responsive">
-        <table class="table table-striped table-sm ">
+      <div className="table-responsive">
+        <table className="table table-striped table-sm ">
           <thead>
             <tr>
               <th>Id</th>
@@ -19,27 +19,27 @@ const CampaignList = (props) => {
               <td>summer shoose</td>
               <td>shose</td>
               <td>
-                <span class="badge bg-info text-light me-1">shoose</span>
-                <span class="badge bg-info text-light me-1">boots</span>
-                <span class="badge bg-info text-light me-1">skarpa</span>
-                <span class="badge bg-info text-light me-1">skarpa</span>
-                <span class="badge bg-info text-light me-1">skarpa</span>
+                <span className="badge bg-info text-light me-1">shoose</span>
+                <span className="badge bg-info text-light me-1">boots</span>
+                <span className="badge bg-info text-light me-1">skarpa</span>
+                <span className="badge bg-info text-light me-1">skarpa</span>
+                <span className="badge bg-info text-light me-1">skarpa</span>
               </td>
               <td className="d-md-flex justify-content-md-end">
                 <div
-                  class="btn-group"
+                  className="btn-group"
                   role="group"
                   aria-label="Basic outlined example"
                 >
                   <button
                     type="button"
-                    class="btn btn-sm btn-outline-secondary"
+                    className="btn btn-sm btn-outline-secondary"
                   >
-                    <i class="far fa-edit"></i> edit
+                    <i className="far fa-edit"></i> edit
                   </button>
 
-                  <button type="button" class="btn btn-sm btn-outline-danger">
-                    <i class="far fa-trash-alt"></i> delete
+                  <button type="button" className="btn btn-sm btn-outline-danger">
+                    <i className="far fa-trash-alt"></i> delete
                   </button>
                 </div>
               </td>
